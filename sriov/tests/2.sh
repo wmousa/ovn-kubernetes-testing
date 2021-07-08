@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Pod to Node local
+source ../config
+
+kubectl create -f ../sriov_workloads/pod-worker1.yaml
+kubectl create -f ../sriov_workloads/iperf_service_host_endpoint.yaml
+kubectl create -f ../sriov_workloads/iperf_service_host.yaml
+
+client_pod=$pod_worker1
+server_ip=`kubectl get nodes  -o wide  | grep $worker1 | awk {'print $6'}`
+
+echo "execution command is:"
+echo "kubectl exec -it $client_pod -- iperf3 -c $server_ip -t 99"
+

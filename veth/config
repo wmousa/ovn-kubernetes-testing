@@ -1,0 +1,18 @@
+export master=""
+export worker1=""
+export worker2=""
+export external_ip=""
+export gw_netns=gw-netns
+
+export test_image="harbor.mellanox.com/cloud-orchestration-dev/hw-offload-test"
+
+export pod_worker1="pod-worker1"
+export pod_worker2="pod-worker2"
+export host_network_pod_worker1="host-network-pod-worker1"
+export host_network_pod_worker2="host-network-pod-worker2"
+
+export iperf3_service_pod=iperf3-service-pod
+
+export iperf3_pod_svc=iperf3-pod-svc
+export iperf3_host_network_svc=iperf3-host-network-svc
+
